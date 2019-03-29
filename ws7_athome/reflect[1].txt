@@ -1,0 +1,49 @@
+//Workshop7
+
+1.	Does the Hero class need to know about the existence of the SuperHero class? (Hint: do a search in Hero.cpp, does the word "SuperHero" appear anywhere?) 
+
+	No, the Hero class is a base class that is independent from derived class.
+	A base class does not know about existence of a derived class.
+	So the base class is not able to access to the derived class.(only the other way works)
+
+
+2.	Does the SuperHero class need to know about the existence of the Hero class? (Hint: do a search in SuperHero.cpp, does the word "Hero" appear anywhere?)
+
+	Yes, the SuperHero class is a derived class that inherits the entire structure of a base class that is the Hero class. The SuperHero class can access the normal member functions in the Hero class. Also, The SuperHero class' constructors are able to call the Hero class' constructors. 
+
+
+3.	The program prints out "Ancient Battle!" when 2 Heroes fight. It prints out "Super Fight!" when 2 SuperHeroes fight. When you tried to make a Hero fight a SuperHero, what did it print out?
+
+	It prints out "Ancient Battle!" because the helper operator in SuperHero.cpp is called only two SuperHeroes fight. When a Hero fight a SuperHero, the helper operator in Hero.cpp is called because SuperHero also include Hero object as well as SuperHero object.
+
+
+4.	True or False: are the following definitions for main valid?  True
+int main() {
+  Hero("Achilles", 20, 6) * Hero("Hector", 30, 5);
+}
+
+how about this? True
+
+int main() {
+ (Hero("Achilles", 20, 6) * Hero("Hector", 30, 5)) 
+                          *
+ (Hero("Atalanta", 10, 3) * Hero("Hippolyta", 10, 2));
+}
+
+
+	I tried them, it worked both of them well. These way of coding would reduce the work less because no need to create a name for object. Is this way of coding is more recommended??
+
+
+
+
+Quiz 6 Reflection:
+1. Explain what Inheritance is, one of the main characteristics of OOP
+	Inheritance is a transitive structural relationship between classes. OO Languages implement reusability of coding structure through inheritance.
+	
+
+2. Describe in English a situation where it makes sense to use inheritance in your code. Use an example(be specific)
+	When I create classes which have hierarchical structure., I could use inheritance in my code. For example, dog is a Canis, which is a Canidae, which is a Carnivora, which is a Mammal, which is a Chordata, which is an Animal. Animal is a base class and others derived classes hierarchically.
+
+
+3. Explain the c++ keyword protected(where do we use it and what does it do?)
+	The keyword protected limits access to derived classes only and is between private and public access. It is located same as public and private in the class to define access of member data or functions. However, we avoid granting protected access to data members for security reason. Keeping a data member private and accessing it through a protected query is good design.

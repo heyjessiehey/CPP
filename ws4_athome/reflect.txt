@@ -1,0 +1,31 @@
+1)	What is a safe empty state? Could you define another state as the safe empty state?
+	A safe empty state is hiding data members. It validates information from client code which data to reject and which data to accept before storing it in an object. If the data is invalid, we can reject them and store default values which is an empty state. I could define another safe empty state when needed.
+
+
+2)	Describe how you have minimized code duplication.
+	To declare and define member functions help minimizing client code duplication. Whenever I need duplicated code, I can simply call the function as many time as I need or I can call the function using loop to simplify the code more. 
+	In this workshop, we use isEmpty(), display(), canTravelWith(...), and name() member functions along with for loop to minimize code duplication.
+
+
+3)	Explain why the canTravelWith(...) member function can access the private data of the object referenced in its parameter.
+	canTravelWith(...) member function has Passenger object's address referenced in its parameter. Therefore, it can access the private data pass-by-address. A reference is an alias for the object and share same memory space along with same address.
+
+
+4)	What statement do you need to add to ensure that the strncpy(...) function executes correctly?
+	Adding header of #include <cstring>
+
+
+5)	Explain what you have learned in this workshop.
+
+	In this workshop, firstly, I've learned defining a constructor that initializes an object's data at creation time and defining overloading constructors and default constructor.
+	Secondly, I've also practiced to use cout.fill() and cout.width() in order to to set the format of unified output. 
+	Lastly, using *this keyword assigning to the current object = the default constructor, I minimized the code.
+
+
+
+Quiz 4 Reflection
+*	Give an example of a class where overloading operators makes sense (what would be the overloaded operators and what would they do)
+	According to class note,  overloading an operator entails declaring a corresponding function in the class definition and defining its logic in the implementation file. 
+	For example, there is a class named Student consist of int no and float grade[]. After declaring Student object and initialize grades in main implementation file, we can modify the data using overloading operators such as adding a grade to array.
+
+

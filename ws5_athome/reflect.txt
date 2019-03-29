@@ -1,0 +1,57 @@
+1.	The operator+ returns a Fraction object.
+	Explain why this operator should not return a reference to a Fraction object.
+	operator+ is a binary operation. In a binary member operator, the left operand
+	is the current object and the member function takes one explicit parameter.
+	operator+'s result is a new value that must return the new value by value but
+	modified such as <<, >>, +=, -=, etc should return a reference to the modified value.
+
+
+
+2.	List the temporary objects in the tester module.
+	(a + b).display();
+	(b + d).display();
+	(b += d).display();
+
+
+
+3.	List the simplifications that you made to your class to minimize duplication.
+
+	isEmpty() function to check empty state in other fucntions.
+	Using Fraction() constructor in Fraction(int, int) constructor to initialize 0 to data members.
+	Using max() and min() function in gcd() function to get the value of max and min.
+	Using reduce() function to calculate data members and get the value in other functions.
+	
+
+
+4.	Explain what you have learned in this workshop.
+
+	I've learned how to use overloading operators with different kind of operators such as
+	binary arithmetic, compound assignmet, relational operator.
+	And there are difference return type for overloading operators such as value by value or
+	value by reference.
+	I have one curiosity. In my compound assignment operator function definition down below,
+	Fraction& Fraction::operator+=(const Fraction& rhs){
+        	if(!isEmpty() && !rhs.isEmpty()) {
+            		*this = *this + rhs;
+ 	           	return *this;
+        	}
+    	}
+	First time, i tried to "*this += rhs;" but it occured error. Usually when i use compound assignment
+	in my code, I always use like this a += b. However, this time there was no choice. 
+	I have to do *this = *this + rhs; this way. 
+
+
+
+Quiz 4 Reflection:
+*	Give an example of a class where overloading operators makes sense 
+	(what would be the overloaded operators and what would they do)
+	Overloading an operator entails declaring a corresponding function 
+	in the class definition and defining its logic in the implementation file.
+	For example,
+	class Album{
+		int tractNum;
+		char songs[50];
+		int year;
+	public:
+		Album& operator +=(char s);
+	}

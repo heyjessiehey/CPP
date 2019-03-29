@@ -1,0 +1,45 @@
+Workshop 9
+
+1. What happens if you try to put your templated functions in Data.cpp? Does your source code compile if you move all functions to Data.h? Explain.
+	No, the complier generated an error because a template is not a function. It is a 'pattern' that the complier uses to generate functions. So during the compile time, the compiler must see the template.
+	If I move all functions to Data.h, the complier cannot see them templates and the functions together.
+
+
+2. Move one templated function into ws9_lab.cpp. Does it work now? Do you need to define the template function above main(), before it is used, or can you define it below main()?
+	No, both cases occured semantic issue that complier cannot find and call the function.
+
+
+3. Could you have done this lab without templates, by just overloading your functions in Data.h to accept integer and double arguments? What is the advantage of using templates?
+	Yes, but the code would be very messy, long, and lots of duplications occurred.	
+	Templates help the programmer make efficient code such as reducing the repetition of code, increasing safety without any cost, and increasing performance.
+
+
+4. Are the following equivalent? template<class T>template<typename T>
+
+Yes, they are exactly same.
+
+
+
+Quiz 9 Reflection:
+template<typename T, typename retType>
+retType Sum(const T* are, unsigned int size){
+	retType result = arr[0];
+	for(unsigned int i = 1; i <size; ++i)
+		result += arr[i];
+	return result;
+}
+
+
+Sum<Student, double>(...)
+#4	Global function - overloaded operator= needed
+	Student& operator=(const Student&);
+#7	Global function - overloaded operator+= needed
+	Student& operator+=(double, Student&);
+
+Sum<Student, Student>(...)
+#4	Member function - copy constructor needed
+	Student(const Student&)
+#7	Member function - overloaded operator+= needed
+	Student& operator+=(const Student&);
+#9	Member function - Destructor needed
+	~Student();

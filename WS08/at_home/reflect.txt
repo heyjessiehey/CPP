@@ -1,0 +1,68 @@
+*reflection: abstract classes are not the same as interfaces. An abstract class contains at least one pure virtual method, while an interface contains only pure virtual methods.
+
+
+1.	What is the difference between an abstract base class and a concrete class?
+	
+	From the class note, an abstract base class defines an interface, while a concrete class is a derived class that implements that interface. 
+	
+	Each concrete class implements its own version of the member functions.
+	An abstract class contains or inherits a pure virtual function without implementations.
+
+
+
+
+2.	Identify the functions that shadow functions of the same name in your solution?
+
+	// ChequingAccount.cpp
+	
+	bool ChequingAccount::credit(double amt){
+	        if (Account::credit(amt)){ // shadowing
+        	    if(Account::debit(m_transactionFee)) // shadowing
+                	return true;
+        	}
+        	return false;
+    	}
+
+
+	bool ChequingAccount::debit(double amt){
+        	if (Account::debit(amt)){ // shadowing
+	            if(Account::debit(m_transactionFee)) // shadowing
+        	        return true;
+	        }
+        	return false;
+    	}
+
+
+	void ChequingAccount::monthEnd(){
+        	Account::debit(m_monthEndFee + m_transactionFee); // shadowing
+
+	}
+
+
+
+
+3.	Explain what have you learned in this workshop.
+
+	I've learned how an interface class exposes the hierarchy's functionality to client that uses its features and differesce between an abstract base class and concrete class.
+	I've practiced to declare pure virtual functions and how to use them in hierarchy.  Also, I've used different design of conditional ternary operator to avoid duplication
+. Lastly ,I've learned how a derived class shadows a base class. 
+
+
+
+
+
+
+Quiz 7 Reflection:
+
+Type conversion operators define implicit conversions to different types, including fundamental types.
+
+	a conversion to integer operator that returns the number of people living in the empire (no need to implement!)?
+
+	operator int() const;
+
+
+	a conversion to bool operator that returns true if the instance is not in an empty state (no need to implement!)?
+
+	operator bool() const;
+
+

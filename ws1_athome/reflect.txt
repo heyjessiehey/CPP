@@ -1,0 +1,29 @@
+1. What is a namespace? Explain its purpose.
+A namespace is like a container. It organizes the code and make the code simple. 
+It allows to use same identifier under different namespace scopes. 
+It does not cause any crash by similar code or naming conflicts.
+
+
+2. Why are header files needed? Explain.
+A compiler compiles file by file.
+So we need to let a compiler know that there are external declaration and definition in other files.
+
+
+3. In the instructions above, you were directed to compile only .cpp files but
+not the .h files. Explain why you should never compile header files.
+No needed to compile header files.
+Because header files consist of declaration for organizing the code and speeding up.
+
+
+
+4. Explain why you should never include .cpp files in another file.
+If we include .cpp files in other files, the linker complains which definition to pick.
+That is why we use header files instead including .cpp files.
+
+
+5. Explain in your own words what have you learned on this workshop.
+	1. organizing the code separated by header files and source files.
+	2. how to use header guard #ifndef #define ~endif in header files 
+	3. how to apply namespace on header files, .cpp files, and main file.
+	
+
