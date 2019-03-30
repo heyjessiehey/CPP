@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/Gayeonko/Desktop/MS4/Allocator.cpp
+MyProduct.h
+/Users/Gayeonko/Desktop/MS4/MyProduct.h
+
+/Users/Gayeonko/Desktop/MS4/MyProduct.cpp
+iostream
+-
+fstream
+-
+cstring
+-
+MyProduct.h
+/Users/Gayeonko/Desktop/MS4/MyProduct.h
+
+/Users/Gayeonko/Desktop/MS4/MyProduct.h
+iProduct.h
+/Users/Gayeonko/Desktop/MS4/iProduct.h
+
+/Users/Gayeonko/Desktop/MS4/iProduct.h
+iostream
+-
+fstream
+-
+
+/Users/Gayeonko/Desktop/MS4/ms4_tester.cpp
+iostream
+-
+iProduct.h
+/Users/Gayeonko/Desktop/MS4/iProduct.h
+
